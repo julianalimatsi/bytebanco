@@ -44,10 +44,6 @@ fun main() {
 
     println("transferência da conta da Juliana para conta do Pedro")
 
-    if (contaJuliana.transfere(80.0, contaPedro)) {
-        println("Tranferencia realizada")
-    } else {
-
 }
 
 
