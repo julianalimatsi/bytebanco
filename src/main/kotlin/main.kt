@@ -42,8 +42,14 @@ fun main() {
     contaJuliana.saca(valor = 500.0)
     println(contaJuliana.saldo)
 
+    println("transferência da conta da Juliana para conta do Pedro")
+
+    if (contaJuliana.transfere(80.0, contaPedro)) {
+        println("Tranferencia realizada")
+    } else {
 
 }
+
 
 class Conta {
     var titular = ""
@@ -60,6 +66,14 @@ class Conta {
         }
     }
 
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (saldo >= valor) {
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
+    }
 }
 
 fun testaReferencias() {
