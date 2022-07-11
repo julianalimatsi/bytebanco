@@ -3,12 +3,12 @@ fun main() {
     val contaJuliana = Conta()
     contaJuliana.titular = "Juliana"
     contaJuliana.numero = 9000
-    contaJuliana.saldo = 900
+    contaJuliana.saldo = 900.0
 
     val contaPedro = Conta()
     contaPedro.titular = "Pedro"
     contaPedro.numero = 8000
-    contaPedro.saldo = 800
+    contaPedro.saldo = 800.0
 
     println(contaJuliana.titular)
     println(contaJuliana.numero)
@@ -19,24 +19,24 @@ fun main() {
     println(contaPedro.saldo)
 
     println("depósito realizado conta do Pedro")
-    deposita(contaPedro, valor = 90.0)
+    contaPedro.deposita(valor = 90.0)
     println(contaPedro.saldo)
 
     println("depósito realizado conta do Juliana")
     println(contaJuliana.saldo)
-    deposita(contaJuliana, valor = 99.0)
-
-}
-
-fun deposita(conta: Conta, valor: Double) {
-    conta.saldo +=
+    contaJuliana.deposita(valor = 99.0)
 
 }
 
 class Conta {
     var titular = ""
-    var numero = 8001
-    var saldo = 9000
+    var numero = 1000
+    var saldo = 0.0
+
+    fun deposita(valor: Double) {
+        this.saldo += valor
+    }
+
 }
 
 fun testaReferencias() {
