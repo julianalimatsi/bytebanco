@@ -26,15 +26,38 @@ fun main() {
     println(contaJuliana.saldo)
     contaJuliana.deposita(valor = 99.0)
 
+    println("sacando na conta do Pedro")
+    contaPedro.saca(valor = 250.0)
+    println(contaPedro.saldo)
+
+    println("saque em excesso na conta do Pedro")
+    contaPedro.saca(valor = 250.0)
+    println(contaPedro.saldo)
+
+    println("sacando na conta da Juliana")
+    contaJuliana.saca(valor = 50.0)
+    println(contaJuliana.saldo)
+
+    println("saque em excesso na conta da Juliana")
+    contaJuliana.saca(valor = 500.0)
+    println(contaJuliana.saldo)
+
+
 }
 
 class Conta {
     var titular = ""
-    var numero = 1000
+    var numero = 0
     var saldo = 0.0
 
     fun deposita(valor: Double) {
         this.saldo += valor
+    }
+
+    fun saca(valor: Double) {
+        if (saldo >= valor) {
+            saldo -= valor
+        }
     }
 
 }
