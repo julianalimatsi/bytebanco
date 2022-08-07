@@ -5,7 +5,7 @@ class Conta {
     var saldo = 0.0
         set(valor) {
             if (valor > 0)
-            field = valor
+                field = valor
         }
 
     fun deposita(valor: Double) {
